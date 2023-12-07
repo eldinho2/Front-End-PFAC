@@ -9,7 +9,8 @@ import { useUser } from '@clerk/nextjs';
 
 export default function Chat() {
   const { user } = useUser();
-  const usuario = user?.username;
+  
+  const usuario = user?.username!;
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const conversationId = useParams();

@@ -32,7 +32,9 @@ export default function Friends() {
           
   useEffect(() => {
     if (!isSignedIn) return;
-    setUserName(user?.username);
+    const username = user?.username!;
+
+    setUserName(username);
 
     const handleGetFriends = async () => {
       try {
