@@ -39,7 +39,7 @@ export default function AddFriend() {
       try {
         userNameSchema.parse(userName)
         await axios.get(`https://pfac-back-end-production.up.railway.app/users/${userName}`);
-        const friendName = user?.username;
+        const friendName = user?.username || 'Usuário desconhecido';
         handleAddFriend(friendName, userName);
       } catch (error: any) {
         if (error instanceof z.ZodError) {
